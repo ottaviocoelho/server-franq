@@ -5,7 +5,7 @@ const NodeCache = require('node-cache');
 
 const app = express();
 const cache = new NodeCache({ stdTTL: 60 });
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const API_URL = 'https://api.hgbrasil.com/finance';
 const API_KEY = process.env.API_KEY;
 
