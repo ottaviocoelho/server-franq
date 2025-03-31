@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const NodeCache = require('node-cache');
-const cors = required('cors')
+const cors = require('cors')
 
 const app = express();
 const cache = new NodeCache({ stdTTL: 9999999 });
@@ -34,7 +34,7 @@ async function fetchFinanceData() {
     }
 }
 
-//setInterval(fetchFinanceData, 60000);
+setInterval(fetchFinanceData, 60000);
 fetchFinanceData();
 
 function sendCachedData(req, res, key) {
